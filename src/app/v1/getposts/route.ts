@@ -4,7 +4,7 @@ import path from "path";
 import matter from "gray-matter";
 import type { blogProp } from "@/types";
 
-export async function GET(context: { params: { post: string } }) {
+export async function GET() {
     const dir = path.join(process.cwd(), "src/data/news");
     const files = await fs.readdir(dir);
     const posts: blogProp[] = [];
