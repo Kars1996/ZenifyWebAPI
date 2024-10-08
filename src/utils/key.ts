@@ -10,6 +10,6 @@ export default function getKey(): string {
     const minutes = Math.floor(date.getMinutes() / 3);
     const time = `${hours}:${minutes.toString().padStart(2, "0")}`;
     const combined = `${privatekey}${datestr}${time}`;
-    const hash = CryptoJS.SHA256(combined).toString();
+    const hash = crypto.SHA256(combined).toString();
     return hash.substring(0, 16);
 }
